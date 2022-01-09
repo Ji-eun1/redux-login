@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// 단축키 rafce
+import React from 'react'
+import './App.scss';
+import Login from './Components/Login'
+import Logout from './Components/Logout'
+import { useSelector } from 'react-redux';
+import { selectUser } from './Features/UserSlice'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    // 11. 유저의 로그인 / 로그아웃 상태에 따라 다른 컴포넌트를 꺼내 보여줌.
+    
+    const user = useSelector(selectUser);
+    console.log(user);
+
+    return (
+        <div>
+            {
+                user
+                ? <Logout />
+                : <Login />
+            }
+        </div>
+    )
 }
 
-export default App;
+export default App

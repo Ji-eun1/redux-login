@@ -1,0 +1,30 @@
+.login{
+    
+    .login_form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap:15px;
+        width:100vw;
+        height:100vh;
+        
+        h1{
+            margin:0;
+        }
+
+        input{
+            width:200px;
+            padding:10px 20px;
+        }
+
+        .submit_btn{
+            width:200px;
+            height:40px;
+            background:#000;
+            color:#fff;
+            outline: none;
+            border:none;
+        }
+    }
+}
